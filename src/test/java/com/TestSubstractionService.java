@@ -25,7 +25,7 @@ public class TestSubstractionService {
 	@Test
 	public void testSubFail() {
 		
-		Assertions.assertEquals(300, substractionService.substract());
+		Assertions.assertEquals(100, substractionService.substract());
 	}
 	
 	@Test
@@ -46,7 +46,7 @@ public class TestSubstractionService {
  
 	@Test
 	public void testDivideFail() {
-		Assertions.assertEquals(200, substractionService.divide());
+		Assertions.assertEquals(100, substractionService.divide());
 		
 
 	}

@@ -28,16 +28,8 @@ public class TestCalculatorService {
 		Assertions.assertNotNull(calculatorService.sum());
 	}
 	 
-	@Test
-	public void testSum4() {
-		
-		Assertions.assertEquals(30, calculatorService.sum());
-	}
-	@Test
-	public void testSum6() {
-		
-		Assertions.assertEquals(130, calculatorService.sum());
-	}
+
+
 	
 	@Test
 	public void testMultiplay() {
