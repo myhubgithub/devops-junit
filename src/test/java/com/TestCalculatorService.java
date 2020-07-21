@@ -20,7 +20,7 @@ public class TestCalculatorService {
 	@Test
 	public void testSumFail() {
 		
-		Assertions.assertEquals(300, calculatorService.sum());
+		Assertions.assertEquals(30, calculatorService.sum());
 	}
 	@Test
 	public void testSum1() {
@@ -40,16 +40,11 @@ public class TestCalculatorService {
  
 	@Test
 	public void testMultiplayFail() {
-		Assertions.assertEquals(20, calculatorService.multiply());
+		Assertions.assertEquals(200, calculatorService.multiply());
 		
 
 	}
-	@Test
-	public void testMultiplay1() {
-		Assertions.assertNotNull(calculatorService.multiply());
-		
-
-	}
+	 
 	
  
 }
