@@ -1,0 +1,16 @@
+version: '3'
+services:
+
+  devops-springboot:
+    image: "myladoorinfotech/docker-demo:1"
+    container_name: spring-boot-webapp
+    ports:
+      - 8082:9090
+
+  db-mysql:
+    image: "mysql:latest"
+    container_name: mysql-db
+    ports:
+      - 3306:3306
+    links:
+      - devops-springboot
