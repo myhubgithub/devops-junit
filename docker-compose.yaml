@@ -5,10 +5,10 @@ services:
     image: mysql:latest
     restart: always
     environment:
-      MYSQL_DATABASE: 'db'
-      MYSQL_USER: 'user'
-      MYSQL_PASSWORD: 's3cr3tpwd'
-      MYSQL_ROOT_PASSWORD: 'v3rys3c3tpwd'
+      MYSQL_DATABASE: 'dbuser'
+      MYSQL_USER: 'testuser'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'password'
     volumes:
       - ./mysql:/var/lib/mysql
     ports:
@@ -18,7 +18,8 @@ services:
 
   tomcat:
     image: tomcat:latest
-    container_name: tomcat
+    container_name: tomcat-web
+    host_port: container_port
     volumes:
       - ./target/war-test.war:/usr/local/tomcat/webapps/war-test.war
     ports:
