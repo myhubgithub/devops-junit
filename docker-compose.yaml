@@ -19,7 +19,6 @@ services:
   tomcat:
     image: tomcat:latest
     container_name: tomcat-web
-    host_port: 8888
     volumes:
       - ./target/war-test.war:/usr/local/tomcat/webapps/war-test.war
     ports:
