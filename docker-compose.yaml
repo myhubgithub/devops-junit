@@ -1,29 +1,27 @@
 version: '3'
-services:
-  tomcat-web:
-    image: tomcat:latest
-    container_name: tomcat
-    volumes:
-      - ./target/war-test.war:/usr/local/tomcat/webapps/war-test.war
-    ports:
-      - "8085:8080"
-    expose:
-      - '8085'
 
-  mysql:
+services:
+  db:
     image: mysql:latest
     restart: always
     environment:
-      MYSQL_DATABASE: 'mydb'
+      MYSQL_DATABASE: 'db'
       MYSQL_USER: 'user'
-      MYSQL_ROOT_PASSWORD: 'abced'
+      MYSQL_PASSWORD: 's3cr3tpwd'
+      MYSQL_ROOT_PASSWORD: 'v3rys3c3tpwd'
     volumes:
       - ./mysql:/var/lib/mysql
     ports:
       - '3306:3306'
     expose:
       - '3306'
-    links:
-      - tomcat-web
 
-
+  tomcat:
+    image: tomcat:latest
+    container_name: tomcat
+    volumes:
+      - ./target/war-test.war:/usr/local/tomcat/webapps/war-test.war
+    ports:
+      - "8080:8080"
+    expose:
+      - '8080'
